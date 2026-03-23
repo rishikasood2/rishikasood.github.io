@@ -5,282 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rishika Sood — Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: white;
-      overflow: hidden;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    /* NAV */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 18px 24px;
-      z-index: 10;
-    }
-    .nav a {
-      text-decoration: none;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      color: #FF00FF;
-    }
-
-    /* AXIS LINES */
-    .center-line {
-      position: absolute;
-      background-color: #000;
-      pointer-events: none;
-    }
-    .center-line-x {
-      width: 93vw;
-      height: 1px;
-      left: 50vw;
-      top: 50vh;
-      transform: translate(-50%, -50%);
-    }
-    .center-line-y {
-      width: 1px;
-      height: 89vh;
-      top: 50vh;
-      left: 50vw;
-      transform: translateY(-50%);
-    }
-
-    /* AXIS LABELS */
-    .center-text-x {
-      position: fixed;
-      top: 1.7vh;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
-    .center-text-x2 {
-      position: fixed;
-      bottom: 3vh;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
-    .center-text-y {
-      position: absolute;
-      top: 47.5vh;
-      left: 3.5vh;
-      transform: translate(-50%) rotate(-90deg);
-      background-color: white;
-      border-bottom: 17px solid #ffffff;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
-    .center-text-y2 {
-      position: absolute;
-      top: 48vh;
-      right: 3.9vh;
-      transform: translate(50%) rotate(90deg);
-      background-color: #ffffff;
-      border-bottom: 17px solid #ffffff;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* DOTS */
-    .dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background-color: rgba(0,0,0,0);
-      border-radius: 50%;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    .dot a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .dot-circle {
-      display: block;
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-      background-color: rgba(0,0,0,0.85);
-      border-radius: 50%;
-      transition: background-color 0.2s ease;
-    }
-    .dot-label {
-      margin-left: 5px;
-      font-size: 1.2rem;
-      color: rgba(0,0,0,0.85);
-      text-align: left;
-      white-space: nowrap;
-      pointer-events: none;
-      transition: color 0.2s ease;
-    }
-    .hover-title:hover .dot-circle {
-      background-color: #FF00FF;
-    }
-    .hover-title:hover .dot-label {
-      color: #FF00FF;
-    }
-
-    /* HOVER IMAGE */
-    .hover-image {
-      visibility: hidden;
-      display: flex;
-      position: fixed;
-      top: 50vh;
-      left: 50vw;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      pointer-events: none;
-      align-items: center;
-      justify-content: center;
-      width: 60vw;
-    }
-    .hover-image img {
-      max-width: 100%;
-      max-height: 80vh;
-      width: auto;
-      height: auto;
-    }
-    .hover-image.visible {
-      visibility: visible;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: white; overflow: hidden; font-family: 'Courier New', Courier, monospace; }
+    .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index: 10; }
+    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #FF00FF; }
+    .center-line { position: absolute; background-color: #000; pointer-events: none; }
+    .center-line-x { width: 93vw; height: 1px; left: 50vw; top: 50vh; transform: translate(-50%, -50%); }
+    .center-line-y { width: 1px; height: 89vh; top: 50vh; left: 50vw; transform: translateY(-50%); }
+    .center-text-x { position: fixed; top: 1.7vh; left: 50%; transform: translateX(-50%); font-size: 1rem; letter-spacing: 0.05em; }
+    .center-text-x2 { position: fixed; bottom: 3vh; left: 50%; transform: translateX(-50%); font-size: 1rem; letter-spacing: 0.05em; }
+    .center-text-y { position: absolute; top: 47.5vh; left: 3.5vh; transform: translate(-50%) rotate(-90deg); background-color: white; border-bottom: 17px solid #ffffff; font-size: 1rem; letter-spacing: 0.05em; }
+    .center-text-y2 { position: absolute; top: 48vh; right: 3.9vh; transform: translate(50%) rotate(90deg); background-color: #ffffff; border-bottom: 17px solid #ffffff; font-size: 1rem; letter-spacing: 0.05em; }
+    .dot { position: absolute; width: 12px; height: 12px; background-color: rgba(0,0,0,0); border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); z-index: 2; display: flex; flex-direction: row; align-items: center; }
+    .dot a { display: flex; align-items: center; text-decoration: none; }
+    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: rgba(0,0,0,0.85); border-radius: 50%; transition: background-color 0.2s ease; }
+    .dot-label { margin-left: 5px; font-size: 1.2rem; color: rgba(0,0,0,0.85); text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
+    .hover-title:hover .dot-circle { background-color: #FF00FF; }
+    .hover-title:hover .dot-label { color: #FF00FF; }
+    .hover-image { visibility: hidden; display: flex; position: fixed; top: 50vh; left: 50vw; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; align-items: center; justify-content: center; width: 60vw; }
+    .hover-image img { max-width: 100%; max-height: 80vh; width: auto; height: auto; }
+    .hover-image.visible { visibility: visible; }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav class="nav">
     <a href="index.html">Projects</a>
     <a href="info.html">Info</a>
   </nav>
-
-  <!-- AXIS LINES -->
   <div class="center-line center-line-x"></div>
   <div class="center-line center-line-y"></div>
-
-  <!-- AXIS LABELS -->
   <div class="center-text-x">SOLVING</div>
   <div class="center-text-x2">STAGING</div>
   <div class="center-text-y">SPECULATION</div>
   <div class="center-text-y2">SHAPING</div>
-
-  <!-- Project 1 -->
   <div class="hover-title dot" style="left:67.5vw; top:20vh;">
-    <a href="project-1.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-1.html"><span class="dot-circle"></span></a>
     <div class="dot-label">INTERSPECIES INTERACTIONS</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1W4O95eqC7_QLuMzi07txUbW1aRckIpVJ" alt="Interspecies Interactions">
-  </div>
-
-  <!-- Project 2 -->
+  <div class="hover-image"><img src="Interspecies_interactions.jpg" alt="Interspecies Interactions"></div>
   <div class="hover-title dot" style="left:64vw; top:40vh;">
-    <a href="project-2.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-2.html"><span class="dot-circle"></span></a>
     <div class="dot-label">ACCESSIBILE DESIGN</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1Q_bE2fUbECUeD6DrgU2TsUML3wb_mg-W" alt="Accessible Design">
-  </div>
-
-  <!-- Project 3 -->
+  <div class="hover-image"><img src="Accessible_design.png" alt="Accessible Design"></div>
   <div class="hover-title dot" style="left:56vw; top:69vh;">
-    <a href="project-3.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-3.html"><span class="dot-circle"></span></a>
     <div class="dot-label">WATER PROJECTIONS</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1PTas1BB9DoBLIEMAQf5ujYEFuFTRT3o0" alt="Water Projections">
-  </div>
-
-  <!-- Project 4 -->
+  <div class="hover-image"><img src="Water_projections.JPG" alt="Water Projections"></div>
   <div class="hover-title dot" style="left:47vw; top:58vh;">
-    <a href="project-4.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-4.html"><span class="dot-circle"></span></a>
     <div class="dot-label">BIODEVICES</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1bniIvjF_2xdcCsHdOUfEx0TPbf2i2Cnf" alt="Biodevices">
-  </div>
-
-  <!-- Project 5 -->
+  <div class="hover-image"><img src="Bio_devices.JPG" alt="Biodevices"></div>
   <div class="hover-title dot" style="left:67vw; top:58vh;">
-    <a href="project-5.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-5.html"><span class="dot-circle"></span></a>
     <div class="dot-label">GENERATIVE ART</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1DU3v5cgBmcihVlzGHULjAbzzFaIGVtpN" alt="Generative Art">
-  </div>
-
-  <!-- Project 6 -->
+  <div class="hover-image"><img src="Generative_art.png" alt="Generative Art"></div>
   <div class="hover-title dot" style="left:28vw; top:68vh;">
-    <a href="project-6.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-6.html"><span class="dot-circle"></span></a>
     <div class="dot-label">MUSIC FUTURES</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1xeXsA9rHCeJXStffv0bRAYcleEjV5IAQ" alt="Music Futures">
-  </div>
-
-  <!-- Project 7 -->
+  <div class="hover-image"><img src="Music_futures.png" alt="Music Futures"></div>
   <div class="hover-title dot" style="left:65vw; top:81vh;">
-    <a href="project-7.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-7.html"><span class="dot-circle"></span></a>
     <div class="dot-label">SOUNDS OF MY EGO</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1Mj79X4aFQKJf-L7HEqFsq3BIFAeooLFq" alt="Sounds of My Ego">
-  </div>
-
-  <!-- Project 8 -->
+  <div class="hover-image"><img src="Sounds_of_my_ego.jpg" alt="Sounds of My Ego"></div>
   <div class="hover-title dot" style="left:55vw; top:85vh;">
-    <a href="project-8.html">
-      <span class="dot-circle"></span>
-    </a>
+    <a href="project-8.html"><span class="dot-circle"></span></a>
     <div class="dot-label">MULTISENSORY STREET</div>
   </div>
-  <div class="hover-image">
-    <img src="https://drive.google.com/uc?export=view&id=1DrojLaXo9syB9n6Km-Yn4LMsBk32JVOD" alt="Multisensory Street">
-  </div>
-
+  <div class="hover-image"><img src="Multisensory_street.jpg" alt="Multisensory Street"></div>
   <script>
     document.querySelectorAll('.hover-title').forEach(function(dot) {
       var img = dot.nextElementSibling;
       if (!img || !img.classList.contains('hover-image')) return;
-      dot.addEventListener('mouseenter', function() {
-        img.classList.add('visible');
-      });
-      dot.addEventListener('mouseleave', function() {
-        img.classList.remove('visible');
-      });
+      dot.addEventListener('mouseenter', function() { img.classList.add('visible'); });
+      dot.addEventListener('mouseleave', function() { img.classList.remove('visible'); });
     });
   </script>
-
 </body>
 </html>
