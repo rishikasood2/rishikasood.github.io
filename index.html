@@ -24,7 +24,7 @@
     .center-text-y2 { position: absolute; top: 48vh; right: 3.9vh; transform: translate(50%) rotate(90deg); background-color: #ffffff; border-bottom: 17px solid #ffffff; font-size: 1rem; letter-spacing: 0.05em; }
     .dot { position: absolute; width: 12px; height: 12px; background-color: rgba(0,0,0,0); border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); z-index: 2; display: flex; flex-direction: row; align-items: center; }
     .dot a { display: flex; align-items: center; text-decoration: none; }
-    .dot-circle { display: block; width: 11px; height: 11px; flex-shrink: 0; background-color: rgba(0,0,0,0.85); border-radius: 50%; transition: background-color 0.2s ease; }
+    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: rgba(0,0,0,0.85); border-radius: 50%; transition: background-color 0.2s ease; }
     .dot-label { margin-left: 5px; font-size: 0.8rem; color: rgba(0,0,0,0.85); text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
     .hover-title:hover .dot-circle { background-color: #FF00FF; }
     .hover-title:hover .dot-label { color: #FF00FF; }
@@ -32,6 +32,15 @@
     .hover-image img { max-width: 100%; max-height: 80vh; width: auto; height: auto; }
     .hover-image.visible { visibility: visible; }
   </style>
+  <!-- Preload all images -->
+  <link rel="preload" href="Interspecies_interactions.jpg" as="image">
+  <link rel="preload" href="Accessible_design.png" as="image">
+  <link rel="preload" href="Water_projections.JPG" as="image">
+  <link rel="preload" href="Bio_devices.JPG" as="image">
+  <link rel="preload" href="Generative_art.png" as="image">
+  <link rel="preload" href="Music_futures.png" as="image">
+  <link rel="preload" href="Sounds_of_my_ego.jpg" as="image">
+  <link rel="preload" href="Multisensory_street.jpg" as="image">
 </head>
 <body>
   <nav class="nav">
@@ -51,7 +60,7 @@
   <div class="hover-image"><img src="Interspecies_interactions.jpg" alt="Interspecies Interactions"></div>
   <div class="hover-title dot" style="left:64vw; top:40vh;">
     <a href="project-2.html"><span class="dot-circle"></span></a>
-    <div class="dot-label">ACCESSIBLE DESIGN</div>
+    <div class="dot-label">ACCESSIBILE DESIGN</div>
   </div>
   <div class="hover-image"><img src="Accessible_design.png" alt="Accessible Design"></div>
   <div class="hover-title dot" style="left:56vw; top:69vh;">
@@ -59,7 +68,7 @@
     <div class="dot-label">WATER PROJECTIONS</div>
   </div>
   <div class="hover-image"><img src="Water_projections.JPG" alt="Water Projections"></div>
-  <div class="hover-title dot" style="left:37vw; top:58vh;">
+  <div class="hover-title dot" style="left:47vw; top:58vh;">
     <a href="project-4.html"><span class="dot-circle"></span></a>
     <div class="dot-label">BIODEVICES</div>
   </div>
@@ -85,6 +94,23 @@
   </div>
   <div class="hover-image"><img src="Multisensory_street.jpg" alt="Multisensory Street"></div>
   <script>
+    // Preload all images into browser cache on page load
+    const images = [
+      'Interspecies_interactions.jpg',
+      'Accessible_design.png',
+      'Water_projections.JPG',
+      'Bio_devices.JPG',
+      'Generative_art.png',
+      'Music_futures.png',
+      'Sounds_of_my_ego.jpg',
+      'Multisensory_street.jpg'
+    ];
+    images.forEach(function(src) {
+      const img = new Image();
+      img.src = src;
+    });
+
+    // Hover image reveal
     document.querySelectorAll('.hover-title').forEach(function(dot) {
       var img = dot.nextElementSibling;
       if (!img || !img.classList.contains('hover-image')) return;
