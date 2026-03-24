@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interspecies Interactions — Rishika Sood</title>
+  <style>
+    @font-face {
+      font-family: 'iAWriterDuospace';
+      src: url('iAWriterDuospace-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: white; font-family: 'iAWriterDuospace', monospace; color: #000; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index: 10; background: white; }
+    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #FF00FF; }
+
+    /* PAGE CONTENT */
+    .page { max-width: 640px; margin: 0 auto; padding: 120px 24px 80px 24px; }
+
+    /* HEADING */
+    .project-title { font-size: 1rem; font-weight: normal; margin-bottom: 12px; }
+    .project-meta { font-size: 0.85rem; color: #888; margin-bottom: 4px; }
+    .project-meta a { color: #888; }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 2px solid #000; margin: 32px 0; width: 100%; }
+    .divider-thin { border: none; border-top: 1px solid #000; margin: 32px 0; width: 20px; }
+
+    /* BODY TEXT */
+    .section { margin-bottom: 24px; }
+    .section p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
+    .section p em { font-style: italic; }
+    .section p strong { font-weight: bold; }
+    .section-label { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 12px; }
+
+    /* IMAGES */
+    .project-image { width: 100%; margin: 24px 0; }
+    .project-image img { width: 100%; height: auto; display: block; }
+    .image-caption { font-size: 0.8rem; color: #888; margin-top: 6px; }
+
+    /* TWO COLUMN IMAGES */
+    .image-row { display: flex; gap: 16px; margin: 24px 0; }
+    .image-row img { width: 50%; height: auto; display: block; }
+
+    /* FOOTNOTES */
+    .footnotes { margin-top: 48px; }
+    .footnotes p { font-size: 0.8rem; color: #555; line-height: 1.6; margin-bottom: 10px; }
+    .footnotes a { color: #555; }
+
+    /* FOOTER NAV */
+    .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid #ccc; font-size: 0.85rem; }
+    .footer a { color: #888; text-decoration: none; margin-right: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html">Projects</a>
+    <a href="info.html">Info</a>
+  </nav>
+
+  <div class="page">
+
+    <!-- HEADING -->
+    <h1 class="project-title">interspecies interactions</h1>
+    <p class="project-meta">2024</p>
+    <p class="project-meta">tagged with: <a href="#">design</a>, <a href="#">research</a></p>
+    <p class="project-meta">filed under: <a href="index.html">projects</a></p>
+
+    <hr class="divider">
+
+    <!-- DESCRIPTION -->
+    <div class="section">
+      <p>Write your project description here. This is the main introduction to the project — what it is, why it exists, and what context it came from.</p>
+      <p>Add a second paragraph here with more detail about the project. You can use <em>italics</em> for emphasis or <strong>bold</strong> for key ideas.</p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="project-image">
+      <img src="Interspecies_interactions.jpg" alt="Interspecies Interactions">
+      <p class="image-caption">* caption for the image above.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <p class="section-label">section subtitle</p>
+      <p>Add another section here describing a specific aspect of the project — your process, key decisions, or outcomes.</p>
+      <p>Continue writing here. Add as many paragraphs as you need.</p>
+    </div>
+
+    <hr class="divider-thin">
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <p class="section-label">another section</p>
+      <p>Add more content here about another aspect of the project.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- COLOPHON -->
+    <div class="section">
+      <p class="section-label">colophon</p>
+      <p>work done: research, concept, design</p>
+      <p>functioning as: your role</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- FOOTNOTES -->
+    <div class="footnotes">
+      <p class="section-label">footnotes:</p>
+      <p>1. Add your first footnote here.</p>
+      <p>2. Add your second footnote here.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <a href="index.html">projects</a>
+      <a href="info.html">info</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
