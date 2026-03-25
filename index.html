@@ -14,7 +14,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: white; overflow: hidden; font-family: 'iAWriterDuospace', monospace; }
     .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index: 10; }
-    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #FF00FF; }
+    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #000; }
     .center-line { position: absolute; background-color: #000; pointer-events: none; }
     .center-line-x { width: 93vw; height: 1px; left: 50vw; top: 50vh; transform: translate(-50%, -50%); }
     .center-line-y { width: 1px; height: 89vh; top: 50vh; left: 50vw; transform: translateY(-50%); }
@@ -24,15 +24,14 @@
     .center-text-y2 { position: absolute; top: 48vh; right: 3.9vh; transform: translate(50%) rotate(90deg); background-color: #ffffff; border-bottom: 17px solid #ffffff; font-size: 1rem; letter-spacing: 0.05em; }
     .dot { position: absolute; width: 12px; height: 12px; background-color: rgba(0,0,0,0); border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); z-index: 2; display: flex; flex-direction: row; align-items: center; }
     .dot a { display: flex; align-items: center; text-decoration: none; }
-    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: rgba(0,0,0,0.85); border-radius: 50%; transition: background-color 0.2s ease; }
-    .dot-label { margin-left: 5px; font-size: 0.8rem; color: rgba(0,0,0,0.85); text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
-    .hover-title:hover .dot-circle { background-color: #FF00FF; }
-    .hover-title:hover .dot-label { color: #FF00FF; }
+    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: #999; border-radius: 50%; transition: background-color 0.2s ease; }
+    .dot-label { margin-left: 5px; font-size: 0.8rem; color: #999; text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
+    .hover-title:hover .dot-circle { background-color: #000; }
+    .hover-title:hover .dot-label { color: #000; }
     .hover-image { visibility: hidden; display: flex; position: fixed; top: 50vh; left: 50vw; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; align-items: center; justify-content: center; width: 60vw; }
     .hover-image img { max-width: 100%; max-height: 80vh; width: auto; height: auto; }
     .hover-image.visible { visibility: visible; }
   </style>
-  <!-- Preload all images -->
   <link rel="preload" href="Interspecies_interactions.jpg" as="image">
   <link rel="preload" href="Accessible_design.png" as="image">
   <link rel="preload" href="Water_projections.JPG" as="image">
@@ -44,7 +43,7 @@
 </head>
 <body>
   <nav class="nav">
-    <a href="index.html">Projects</a>
+    <a href="index.html">Rishika Sood</a>
     <a href="info.html">Info</a>
   </nav>
   <div class="center-line center-line-x"></div>
@@ -94,7 +93,6 @@
   </div>
   <div class="hover-image"><img src="Multisensory_street.jpg" alt="Multisensory Street"></div>
   <script>
-    // Preload all images into browser cache on page load
     const images = [
       'Interspecies_interactions.jpg',
       'Accessible_design.png',
@@ -109,8 +107,6 @@
       const img = new Image();
       img.src = src;
     });
-
-    // Hover image reveal
     document.querySelectorAll('.hover-title').forEach(function(dot) {
       var img = dot.nextElementSibling;
       if (!img || !img.classList.contains('hover-image')) return;
