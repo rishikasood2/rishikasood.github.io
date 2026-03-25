@@ -13,24 +13,14 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: white; font-family: 'iAWriterDuospace', monospace; color: #000; }
-
-    /* NAV */
-    .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index 10; background: white; }
+    .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index: 10; background: white; }
     .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #FF00FF; }
-
-    /* PAGE CONTENT */
     .page { max-width: 640px; margin: 0 auto; padding: 120px 24px 80px 24px; }
-
-    /* HEADING */
     .project-title { font-size: 1rem; font-weight: normal; margin-bottom: 12px; }
     .project-meta { font-size: 0.85rem; color: #888; margin-bottom: 4px; }
     .project-meta a { color: #888; }
-
-    /* DIVIDER */
     .divider { border: none; border-top: 2px solid #000; margin: 32px 0; width: 100%; }
     .divider-thin { border: none; border-top: 1px solid #000; margin: 32px 0; width: 20px; }
-
-    /* BODY TEXT */
     .section { margin-bottom: 24px; }
     .section p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
     .section p em { font-style: italic; }
@@ -38,29 +28,22 @@
     .section-label { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 12px; }
     .section ul { margin-left: 20px; margin-bottom: 16px; }
     .section ul li { font-size: 0.95rem; line-height: 1.7; margin-bottom: 6px; }
-
-    /* IMAGES */
     .project-image { width: 100%; margin: 24px 0; }
     .project-image img { width: 100%; height: auto; display: block; }
     .image-caption { font-size: 0.8rem; color: #888; margin-top: 6px; }
-
-    /* TWO COLUMN IMAGES */
     .image-row { display: flex; gap: 16px; margin: 24px 0; }
     .image-row img { width: 50%; height: auto; display: block; }
-
-    /* FOOTNOTES */
+    .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .image-grid img { width: 100%; height: auto; display: block; }
     .footnotes { margin-top: 48px; }
     .footnotes p { font-size: 0.8rem; color: #555; line-height: 1.6; margin-bottom: 10px; }
     .footnotes a { color: #555; }
-
-    /* FOOTER NAV */
     .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid #ccc; font-size: 0.85rem; }
     .footer a { color: #888; text-decoration: none; margin-right: 16px; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <a href="index.html">Projects</a>
     <a href="info.html">Info</a>
@@ -68,7 +51,6 @@
 
   <div class="page">
 
-    <!-- HEADING -->
     <h1 class="project-title">Interspecies Interactions</h1>
     <p class="project-meta">2024</p>
     <p class="project-meta">tags: <a href="#">problem solving</a>, <a href="#">non-human centric interaction design</a></p>
@@ -80,17 +62,22 @@
     <div class="section">
       <p>The Artifact is a play-based interaction between children and ants to foster empathy for ants amongst children. It consists of a pop-up book with chapters about ant behaviour, recipes to feed the ants and restaurant setups that can be placed outdoors.</p>
       <p>Through its design, the restaurant questions non anthropocentricity in the design process and explores the boundaries of non-human centric interaction design.</p>
-    </div>
+ 
 
-    <!-- IMAGE -->
+    <!-- MAIN IMAGE -->
     <div class="project-image">
       <img src="Interspecies_interactions.jpg" alt="Interspecies Interactions">
-      <p class="image-caption">* caption for the image above.</p>
-    </div>
+      <p class="image-caption">* Tiny Diner Pop-Up Book.</p>
+   
 
+    <!-- SETUP IMAGE -->
+    <div class="project-image">
+      <img src="Setup.png" alt="Setup">
+      <p class="image-caption">* Restaurant setup for feeding ants.</p>
+  
     <hr class="divider">
 
-    <!-- SECTION 2 -->
+    <!-- THE PROBLEM -->
     <div class="section">
       <p class="section-label">The problem</p>
       <p>The problem stems from children's perception of insects. Their lack of empathy toward invertebrates is driven by the negative attitudes adults around them hold toward insects, compounded by the fact that invertebrates lack the familiar, appealing features that other mammals possess.</p>
@@ -98,19 +85,42 @@
 
     <hr class="divider-thin">
 
-    <!-- SECTION 3 -->
+    <!-- DESIGN PROCESS -->
     <div class="section">
       <p class="section-label">Design Process</p>
-      <p>The design process consisted of research, analysis and design methodologies that aimed towards continuous divergence and convergence.:</p>
+      <p>The design process consisted of research, analysis and design methods that aimed towards continuous divergence and convergence:</p>
       <ul>
-        <li>Understanding the problem space using primary and secondary methods</li>
+        <li>Understanding the problem space</li>
         <li>Exploring psychological mechanisms behind empathy formation</li>
-        <li>Exploring the acts of 'care' and 'feeding' for empathy</li>
-        <li>Developing non-anthropocentric research methods to conduct primary studies on ants</li>
-        <li>Creating an ethical framework for an 'ant restaurant'</li>
-        <li>Anthropomising the 'ant restuarant' to fit into the children's point of view</li>
+        <li>Using non-anthropocentric methods to conduct primary studies for understanding ant behaviour</li>
+        <li>Creating a solution framework</li>
         <li>Rapid prototyping and iteration to make the final artifact</li>
       </ul>
+
+
+        <!-- NON-ANTHROPOCENTRIC RESEARCH -->
+    <div class="section">
+      <p class="section-label">Non Anthropocentric Research</p>
+      <p>To design an artifact that could truely foster interspecies interaction, it was important to understand the foraging patterns of ants. This was done by observing the ant participants in their natural habitat i.e. near an anthill ensuring that no activities are done by the researcher that might provoke anxiety amongst the ants. To achieve this, an ethical framework was created after consulation with an insect specialist who understood how the ant colony worked, along with its heirarchies and role of each indivdual ant within the anthill.</p>
+ 
+ 
+    <hr class="divider-thin">
+            <!-- ARTIFACT -->
+    <div class="section">
+      <p class="section-label">The Artifact</p>
+      <p>The final artifact was created after testing several prototypes.</p>
+ 
+
+    
+
+    <!-- IMAGES 1-6 IN GRID -->
+    <div class="image-grid">
+      <img src="1.png" alt="Process 1">
+      <img src="2.png" alt="Process 2">
+      <img src="3.png" alt="Process 3">
+      <img src="4.png" alt="Process 4">
+      <img src="5.png" alt="Process 5">
+      <img src="6.png" alt="Process 6">
     </div>
 
     <hr class="divider">
@@ -131,7 +141,6 @@
       <p>2. Add your second footnote here.</p>
     </div>
 
-    <!-- FOOTER -->
     <div class="footer">
       <a href="index.html">projects</a>
       <a href="info.html">info</a>
