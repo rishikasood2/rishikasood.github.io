@@ -14,7 +14,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: white; overflow: hidden; font-family: 'iAWriterDuospace', monospace; }
     .nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; padding: 18px 24px; z-index: 10; }
-    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #000; }
+    .nav a { text-decoration: none; font-size: 1rem; letter-spacing: 0.05em; color: #FF00FF; }
     .center-line { position: absolute; background-color: #000; pointer-events: none; }
     .center-line-x { width: 93vw; height: 1px; left: 50vw; top: 50vh; transform: translate(-50%, -50%); }
     .center-line-y { width: 1px; height: 89vh; top: 50vh; left: 50vw; transform: translateY(-50%); }
@@ -24,30 +24,27 @@
     .center-text-y2 { position: absolute; top: 48vh; right: 3.9vh; transform: translate(50%) rotate(90deg); background-color: #ffffff; border-bottom: 17px solid #ffffff; font-size: 1rem; letter-spacing: 0.05em; }
     .dot { position: absolute; width: 12px; height: 12px; background-color: rgba(0,0,0,0); border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); z-index: 2; display: flex; flex-direction: row; align-items: center; }
     .dot a { display: flex; align-items: center; text-decoration: none; }
-    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: #999; border-radius: 50%; transition: background-color 0.2s ease; }
-    .dot-label { margin-left: 5px; font-size: 0.8rem; color: #999; text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
-    .hover-title:hover .dot-circle { background-color: #000; }
-    .hover-title:hover .dot-label { color: #000; }
-    .tilt-image { width: 220px; height: auto; transform-origin: bottom center; animation: none; }
-    .tilt-image-small { width: 150px; height: auto; transform-origin: bottom center; animation: none; }
-    .tilt-image-extrasmall { width: 120px; height: auto; transform-origin: bottom center; animation: none; }
-    .tilt-image-extralarge { width: 270px; height: auto; transform-origin: bottom center; animation: none; }
-    .hover-title:hover .tilt-image { animation: tilt-loop 0.5s ease-in-out infinite; }
-    .hover-title:hover .tilt-image-small { animation: tilt-loop 0.5s ease-in-out infinite; }
-    .hover-title:hover .tilt-image-extrasmall { animation: tilt-loop 0.5s ease-in-out infinite; }
-    .hover-title:hover .tilt-image-extralarge { animation: tilt-loop 0.5s ease-in-out infinite; }
-    @keyframes tilt-loop {
-      0%   { transform: rotate(0deg); }
-      25%  { transform: rotate(-10deg); }
-      50%  { transform: rotate(0deg); }
-      75%  { transform: rotate(10deg); }
-      100% { transform: rotate(0deg); }
-    }
+    .dot-circle { display: block; width: 12px; height: 12px; flex-shrink: 0; background-color: rgba(0,0,0,0.85); border-radius: 50%; transition: background-color 0.2s ease; }
+    .dot-label { margin-left: 5px; font-size: 1.2rem; color: rgba(0,0,0,0.85); text-align: left; white-space: nowrap; pointer-events: none; transition: color 0.2s ease; }
+    .hover-title:hover .dot-circle { background-color: #FF00FF; }
+    .hover-title:hover .dot-label { color: #FF00FF; }
+    .hover-image { visibility: hidden; display: flex; position: fixed; top: 50vh; left: 50vw; transform: translate(-50%, -50%); z-index: -1; pointer-events: none; align-items: center; justify-content: center; width: 60vw; }
+    .hover-image img { max-width: 100%; max-height: 80vh; width: auto; height: auto; }
+    .hover-image.visible { visibility: visible; }
   </style>
+  <!-- Preload all images -->
+  <link rel="preload" href="Interspecies_interactions.jpg" as="image">
+  <link rel="preload" href="Accessible_design.png" as="image">
+  <link rel="preload" href="Water_projections.JPG" as="image">
+  <link rel="preload" href="Bio_devices.JPG" as="image">
+  <link rel="preload" href="Generative_art.png" as="image">
+  <link rel="preload" href="Music_futures.png" as="image">
+  <link rel="preload" href="Sounds_of_my_ego.jpg" as="image">
+  <link rel="preload" href="Multisensory_street.jpg" as="image">
 </head>
 <body>
   <nav class="nav">
-    <a href="index.html">Rishika Sood</a>
+    <a href="index.html">Projects</a>
     <a href="info.html">Info</a>
   </nav>
   <div class="center-line center-line-x"></div>
@@ -57,34 +54,69 @@
   <div class="center-text-y">SPECULATION</div>
   <div class="center-text-y2">SHAPING</div>
   <div class="hover-title dot" style="left:67.5vw; top:20vh;">
-    <a href="project-1.html">
-      <img src="Interspecies_interactions-removebg-preview.png" class="tilt-image" alt="Interspecies Interactions">
-    </a>
+    <a href="project-1.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">INTERSPECIES INTERACTIONS</div>
   </div>
+  <div class="hover-image"><img src="Interspecies_interactions.jpg" alt="Interspecies Interactions"></div>
   <div class="hover-title dot" style="left:64vw; top:40vh;">
-    <a href="project-2.html">
-      <img src="AI_agents.png" class="tilt-image-small" alt="Accessible Design">
-    </a>
+    <a href="project-2.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">ACCESSIBILE DESIGN</div>
   </div>
- <div class="hover-title dot" style="left:37vw; top:58vh;">
-    <a href="project-4.html">
-      <img src="Bio_devices.png" class="tilt-image-small" alt="Bio Devices">
+  <div class="hover-image"><img src="Accessible_design.png" alt="Accessible Design"></div>
+  <div class="hover-title dot" style="left:56vw; top:69vh;">
+    <a href="project-3.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">WATER PROJECTIONS</div>
   </div>
- <div class="hover-title dot" style="left:50vw; top:58vh;">
-    <a href="project-5.html">
-      <img src="Generative_art.png" class="tilt-image-extrasmall" alt="Generative Art">
+  <div class="hover-image"><img src="Water_projections.JPG" alt="Water Projections"></div>
+  <div class="hover-title dot" style="left:47vw; top:58vh;">
+    <a href="project-4.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">BIODEVICES</div>
   </div>
- <div class="hover-title dot" style="left:28vw; top:68vh;">
-    <a href="project-6.html">
-      <img src="Music_futures.png" class="tilt-image" alt="Music Futures">
+  <div class="hover-image"><img src="Bio_devices.JPG" alt="Biodevices"></div>
+  <div class="hover-title dot" style="left:67vw; top:58vh;">
+    <a href="project-5.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">GENERATIVE ART</div>
   </div>
- <div class="hover-title dot" style="left:65vw; top:81vh;">
-    <a href="project-7.html">
-      <img src="Sounds_of_my_ego.png" class="tilt-image-extralarge" alt="Sounds of my ego">
+  <div class="hover-image"><img src="Generative_art.png" alt="Generative Art"></div>
+  <div class="hover-title dot" style="left:28vw; top:68vh;">
+    <a href="project-6.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">MUSIC FUTURES</div>
   </div>
- <div class="hover-title dot" style="left:85vw; top:85vh;">
-    <a href="project-8.html">
-      <img src="Multisensory_street.png" class="tilt-image" alt="Multisensory street">
+  <div class="hover-image"><img src="Music_futures.png" alt="Music Futures"></div>
+  <div class="hover-title dot" style="left:65vw; top:81vh;">
+    <a href="project-7.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">SOUNDS OF MY EGO</div>
   </div>
+  <div class="hover-image"><img src="Sounds_of_my_ego.jpg" alt="Sounds of My Ego"></div>
+  <div class="hover-title dot" style="left:55vw; top:85vh;">
+    <a href="project-8.html"><span class="dot-circle"></span></a>
+    <div class="dot-label">MULTISENSORY STREET</div>
+  </div>
+  <div class="hover-image"><img src="Multisensory_street.jpg" alt="Multisensory Street"></div>
+  <script>
+    // Preload all images into browser cache on page load
+    const images = [
+      'Interspecies_interactions.jpg',
+      'Accessible_design.png',
+      'Water_projections.JPG',
+      'Bio_devices.JPG',
+      'Generative_art.png',
+      'Music_futures.png',
+      'Sounds_of_my_ego.jpg',
+      'Multisensory_street.jpg'
+    ];
+    images.forEach(function(src) {
+      const img = new Image();
+      img.src = src;
+    });
+
+    // Hover image reveal
+    document.querySelectorAll('.hover-title').forEach(function(dot) {
+      var img = dot.nextElementSibling;
+      if (!img || !img.classList.contains('hover-image')) return;
+      dot.addEventListener('mouseenter', function() { img.classList.add('visible'); });
+      dot.addEventListener('mouseleave', function() { img.classList.remove('visible'); });
+    });
+  </script>
 </body>
 </html>
